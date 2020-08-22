@@ -2,6 +2,12 @@
 
 {% block mycss %}
 <style>
+.nav-list[data-v-711ef53a] {
+    padding: 0 20px;
+}
+ol, ul {
+    list-style: none;
+}
 .nav-list li .nav-container>div[data-v-711ef53a] {
     float: left;
     -webkit-box-sizing: border-box;
@@ -31,7 +37,6 @@ li {
 
 ul, menu, dir {
     display: block;
-    list-style-type: disc;
     -webkit-margin-before: 1em;
     -webkit-margin-after: 1em;
     -webkit-margin-start: 0px;
@@ -44,7 +49,20 @@ ul, menu, dir {
     margin: 0;
     font-family: MicrosoftYaHei;
     -webkit-tap-highlight-color: rgba(255,255,255,0);
-    tap-highlight-color: hsla(0,0%,100%,0);
+
+}
+.nav-list li .nav-container>div[data-v-711ef53a] {
+    float: left;
+    box-sizing: border-box;
+}
+.nav-list li .list-title[data-v-711ef53a] {
+    width: 45%;
+    padding: 30px 10px 30px 20px;
+}
+.nav-list li .list-title .list-title-text[data-v-711ef53a] {
+    min-height: 20px;
+    position: relative;
+    padding-left: 28px;
 }
 .clearfix:after {
     display: block;
@@ -54,7 +72,35 @@ ul, menu, dir {
 ol, ul {
     list-style: none;
 }
-
+.nav-list li[data-v-711ef53a] {
+    min-height: 80px;
+    border-top: 1px solid #e5e9ef;
+}
+.nav-list li .list-title .list-title-text .safe[data-v-711ef53a] {
+    background: url(/static/images/download.png) no-repeat;
+}
+.nav-list li .list-title .list-title-text span[data-v-711ef53a] {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 1px;
+    left: 0;
+}
+.nav-list li .list-title .list-title-text p[data-v-711ef53a] {
+    line-height: 20px;
+    font-size: 14px;
+    color: #222;
+}
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.nav-list li .list-title .list-title-text .normal[data-v-711ef53a] {
+    background: url(/static/images/download1.png) no-repeat;
+}
 
 </style>
 
@@ -62,96 +108,99 @@ ol, ul {
 
 
 {% block content %}
-
-    <div class="main_con clearfix" style="background:#fff">
-        <div class="left_menu_con clearfix" >
+<div class="main_con clearfix">
+    <div class="left_menu_con clearfix">
+        <ul>
             <h3>用户中心</h3>
-            <ul style="background:#fff">
-                <li><a href="" class="active">个人信息</a></li>
-                <li><a href="/avatar/{{ user.username }}" >我的头像</a></li>
-                <li><a href="/safe/{{ user.username }}">安全中心</a></li>
-                <li><a href="">全部订单</a></li>
-                <li><a href="">收货地址</a></li>
-            </ul>
-        </div>
-        <div class="right_content clearfix">
-            <div class="info_con clearfix">
-                <h3 class="common_title2">安全中心</h3>
-                <div>
-                    <ul data-v-711ef53a="" class="nav-list">
-                        <li data-v-711ef53a="">
-                            <div data-v-711ef53a="" class="nav-container clearfix">
-                                <div data-v-711ef53a="" class="list-title clearfix">
-                                    <div data-v-711ef53a="" class="list-title-text"><span data-v-711ef53a=""
-                                                                                          class="safe"></span>
-                                        <p data-v-711ef53a="">设置密码</p></div>
-                                </div>
-                                <div data-v-711ef53a="" class="list-description"><p data-v-711ef53a="" class="">
-                                    已设置
-                                    <!----></p></div>
-                                <div data-v-711ef53a="" class="list-link"><p data-v-711ef53a=""><a data-v-711ef53a=""
-                                                                                                   href="/safe/{{ user.username }}/setpassword"
-                                                                                                   class="">修改密码</a></p>
-                                </div>
+            <li><a href="/center/{{ user.username }}">个人信息</a></li>
+            <li><a href="/avatar/{{ user.username }}">我的头像</a></li>
+            <li><a href="/safe/{{ user.username }}" class="active">安全中心</a></li>
+            <li><a href="">全部订单</a></li>
+            <li><a href="">收货地址</a></li>
+        </ul>
+    </div>
+    <div class="right_content clearfix">
+        <div class="info_con clearfix">
+            <h3 class="common_title2">安全中心</h3>
+            <div>
+                <ul data-v-711ef53a="" class="nav-list">
+                    <li data-v-711ef53a="">
+                        <div data-v-711ef53a="" class="nav-container clearfix">
+                            <div data-v-711ef53a="" class="list-title clearfix">
+                                <div data-v-711ef53a="" class="list-title-text"><span data-v-711ef53a=""
+                                                                                      class="safe"></span>
+                                    <p data-v-711ef53a="" style="display:block;">设置密码</p></div>
                             </div>
-                        </li>
-                        <li data-v-711ef53a="">
-                            <div data-v-711ef53a="" class="nav-container clearfix">
-                                <div data-v-711ef53a="" class="list-title clearfix">
-                                    <div data-v-711ef53a="" class="list-title-text"><span data-v-711ef53a=""
-                                                                                          class="safe"></span>
-                                        <p data-v-711ef53a="">绑定手机</p></div>
-                                </div>
-                                {% if not user.phone %}
-                                <div data-v-711ef53a="" class="list-description"><p data-v-711ef53a="" class="">
-                                    未绑定手机
-                                    <!----></p></div>
-                                {% else %}
-                                 <div data-v-711ef53a="" class="list-description"><p data-v-711ef53a="" class="">
-                                    {{ user.phone }}
-                                    <!----></p></div>
-                                {% endif %}
+                            <div data-v-711ef53a="" class="list-description"><p data-v-711ef53a="" class="">
+                                已设置
+                                <!----></p></div>
+                            <div data-v-711ef53a="" class="list-link"><p data-v-711ef53a=""><a data-v-711ef53a=""
+                                                                                               href="/safe/{{ user.username }}/setpassword"
+                                                                                               class="">修改密码</a></p>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-v-711ef53a="">
+                        <div data-v-711ef53a="" class="nav-container clearfix">
+                            <div data-v-711ef53a="" class="list-title clearfix">
+                                <div data-v-711ef53a="" class="list-title-text"><span data-v-711ef53a=""
+                                                                                      class="safe"></span>
+                                    <p data-v-711ef53a="">绑定手机</p></div>
+                            </div>
+                            {% if not user.phone %}
+                            <div data-v-711ef53a="" class="list-description"><p data-v-711ef53a="" class="">
+                                未绑定手机
+                                <!----></p></div>
+                            {% else %}
+                            <div data-v-711ef53a="" class="list-description"><p data-v-711ef53a="" class="">
+                                {{ user.phone }}
+                                <!----></p></div>
+                            {% endif %}
 
-                                <div data-v-711ef53a="" class="list-link"><p data-v-711ef53a=""><a data-v-711ef53a=""
-                                                                                                   href="/safe/bindphone"
-                                                                                                   class="">更换手机</a></p>
-                                </div>
+                            <div data-v-711ef53a="" class="list-link"><p data-v-711ef53a=""><a data-v-711ef53a=""
+                                                                                               href="/safe/bindphone"
+                                                                                               class="">更换手机</a></p>
                             </div>
-                        </li>
-                        <li data-v-711ef53a="">
-                            <div data-v-711ef53a="" class="nav-container clearfix">
+                        </div>
+                    </li>
+                    <li data-v-711ef53a="">
+                        <div data-v-711ef53a="" class="nav-container clearfix">
+
+                            {% if not user.email %}
+                            <div data-v-711ef53a="" class="list-title clearfix">
+                                <div data-v-711ef53a="" class="list-title-text"><span data-v-711ef53a=""
+                                                                                      class="normal"></span>
+                                    <p data-v-711ef53a="">绑定邮箱</p></div>
+                            </div>
+                            <div data-v-711ef53a="" class="list-description"><p data-v-711ef53a="" class="">
+                                未绑定
+                                <!----></p></div>
+                            <div data-v-711ef53a="" class="list-link"><p data-v-711ef53a=""><a data-v-711ef53a=""
+                                                                                               href="#/bindmail"
+                                                                                               class="">绑定邮箱</a></p>
+                                {% else %}
                                 <div data-v-711ef53a="" class="list-title clearfix">
                                     <div data-v-711ef53a="" class="list-title-text"><span data-v-711ef53a=""
                                                                                           class="safe"></span>
                                         <p data-v-711ef53a="">绑定邮箱</p></div>
                                 </div>
-                                {% if not user.email %}
-
-                                <div data-v-711ef53a="" class="list-description"><p data-v-711ef53a="" class="">
-                                    未绑定
-                                    <!----></p></div>
-                                <div data-v-711ef53a="" class="list-link"><p data-v-711ef53a=""><a data-v-711ef53a=""
-                                                                                                   href="#/bindmail"
-                                                                                                   class="">绑定邮箱</a></p>
-                                {% else %}
                                 <div data-v-711ef53a="" class="list-description"><p data-v-711ef53a="" class="">
                                     {{ user.email }}
                                     <!----></p></div>
                                 <div data-v-711ef53a="" class="list-link"><p data-v-711ef53a=""><a data-v-711ef53a=""
                                                                                                    href="#/bindmail"
                                                                                                    class="">更换邮箱</a></p>
-                                {% endif %}
+                                    {% endif %}
 
 
                                 </div>
                             </div>
-                        </li>
-                    </ul>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-
+</div>
 
 
 {% endblock %}

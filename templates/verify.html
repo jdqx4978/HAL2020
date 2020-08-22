@@ -205,11 +205,11 @@ a {
 
 
 {% block content %}
-<div class="col-md-7">
+
     <div class="main_con clearfix">
         <div class="left_menu_con clearfix">
-            <h3>用户中心</h3>
             <ul>
+                <h3>用户中心</h3>
                 <li><a href="">· 个人信息</a></li>
                 <li><a href="/avatar/{{ user.username }}">我的头像</a></li>
                 <li><a href="/safe/{{ user.username }}" class="active">安全中心</a></li>
@@ -259,7 +259,7 @@ a {
             </div>
         </div>
     </div>
-</div>
+
 
 
 {% endblock %}

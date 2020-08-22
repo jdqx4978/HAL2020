@@ -6,9 +6,10 @@
 <div class="col-md-7">
     <div class="main_con clearfix">
         <div class="left_menu_con clearfix">
-            <h3>用户中心</h3>
+
             <ul>
-                <li><a href="">· 个人信息</a></li>
+                <h3>用户中心</h3>
+                <li><a href="/center/{{ user.username }}">个人信息</a></li>
                 <li><a href="/avatar/{{ user.username }}" class="active">我的头像</a></li>
                 <li><a href="/safe/{{ user.username }}">安全中心</a></li>
                 <li><a href="">· 全部订单</a></li>
@@ -16,7 +17,7 @@
             </ul>
         </div>
         <div class="right_content clearfix">
-            <div class="info_con clearfix">
+            <div class="info_con clearfix" >
                 <h3 class="common_title2">我的头像</h3>
                 <div class="user_info_list"  style="height:400px">
                     <form action="" method="post" enctype="multipart/form-data" class="avatar_form" style="margin-left:100px;margin-top:50px;">
@@ -26,8 +27,8 @@
                         <p class="avatar"><img src="/static/images/hello.png" alt="" style="width:200px;border-radius:100% 100%;"></p>
                         {% endif %}
 
-                        <p>
-                            <label for="avatar" style="margin-top:20px">当前头像</label>&nbsp;&nbsp;<input type="file" name="avatar" id="avatar" style="padding-top:10px">
+                        <p style="margin-left:74px">
+                            <label for="avatar" style="margin-top:20px;">当前头像</label>&nbsp;&nbsp;<input type="file" name="avatar" id="avatar" style="padding-top:10px">
                             </br>
                             </br>
                             <input id="submit-btn" type="button" value="更新" onclick="upload()">
