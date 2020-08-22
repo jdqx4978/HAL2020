@@ -1,0 +1,56 @@
+.forumbox .postrow .c2 {
+    text-align: left;
+}
+.forumbox .c1, .forumbox .c2, .forumbox .c3, .forumbox .c4, .forumbox .c5, .forumbox .c6, .forumbox .contentBlock {
+    line-height: 1.83em;
+    word-wrap: break-word;
+    word-break: break-all;
+    text-align: left;
+}
+.forumbox {
+    border-spacing: 1px;
+}
+body {
+    text-align: left;
+    font-family: Verdana, Tahoma, Arial, sans-serif;
+    font-size: 12px;
+    color: #10273f;
+}
+.small_colored_text_btn {
+    line-height: 1.5em;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.block_txt_c2 {
+    background: #e0c19e;
+    color: #274349;
+}
+.small_colored_text_btn {
+    border-radius: 0.25em;
+    -moz-border-radius: 0.2em;
+    padding: 0 0.4em 0.05em 0.4em;
+        padding-top: 0px;
+        padding-bottom: 0.05em;
+    line-height: 1.5em;
+    cursor: hand;
+    background-color: red;
+    font-family: Verdana, Tahoma, Arial, sans-serif;
+    display: inline-block;
+}
+.stxt {
+    font-size: 1em;
+}
+.forumbox .postrow .c2 {
+    text-align: left;
+}
+.forumbox .postrow h3 {
+    font-size: 2em;
+    display: inline;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    line-height: 2em;
+}
+.white:hover {
+    color: #ddd;
+}

@@ -1,0 +1,72 @@
+{% extends 'center_base.html' %}
+
+
+{% block content %}
+
+<div class="col-md-7">
+    <div class="main_con clearfix">
+        <div class="left_menu_con clearfix">
+            <h3>用户中心</h3>
+            <ul>
+                <li><a href="">· 个人信息</a></li>
+                <li><a href="/avatar/{{ user.username }}" class="active">我的头像</a></li>
+                <li><a href="/safe/{{ user.username }}">安全中心</a></li>
+                <li><a href="">· 全部订单</a></li>
+                <li><a href="">· 收货地址</a></li>
+            </ul>
+        </div>
+        <div class="right_content clearfix">
+            <div class="info_con clearfix">
+                <h3 class="common_title2">我的头像</h3>
+                <div class="user_info_list"  style="height:400px">
+                    <form action="" method="post" enctype="multipart/form-data" class="avatar_form" style="margin-left:100px;margin-top:50px;">
+                        {% if user.avatar %}
+                        <p class="avatar"><img src='http://127.0.0.1:8000/media/{{ user.avatar }}' alt="" style="width:100px;height:100px;border-radius:100% 100%;"></p>
+                        {% else %}
+                        <p class="avatar"><img src="/static/images/hello.png" alt="" style="width:200px;border-radius:100% 100%;"></p>
+                        {% endif %}
+
+                        <p>
+                            <label for="avatar" style="margin-top:20px">当前头像</label>&nbsp;&nbsp;<input type="file" name="avatar" id="avatar" style="padding-top:10px">
+                            </br>
+                            </br>
+                            <input id="submit-btn" type="button" value="更新" onclick="upload()">
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+     function upload(){
+        var token = window.localStorage.getItem('user_token');
+        var username = window.localStorage.getItem('user_user');
+        //$('.avatar_form').attr('action', 'http://127.0.0.1/users/avatar')
+        var url = 'http://127.0.0.1:8000/v1/users/' + username + '/avatar'
+        formdata = new FormData();
+        formdata.append("avatar",$("#avatar")[0].files[0]);
+        $.ajax({
+            processData: false,
+            contentType: false,
+            url: url,
+            type: 'post',
+            data: formdata,
+            beforeSend: function(request) {
+                request.setRequestHeader("Authorization", token);
+            },
+            success: function(arg) {
+	            if (arg.code == 200) {
+		            alert('成功！')
+                    window.location.reload()
+	            } else {
+		            alert('失败！')
+                    }
+                }
+            })
+
+        }
+</script>
+
+{% endblock %}

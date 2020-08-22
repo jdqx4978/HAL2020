@@ -1,0 +1,543 @@
+{% extends 'center_base.html' %}
+
+{% block mycss %}
+
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    font-family: MicrosoftYaHei;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    tap-highlight-color: hsla(0,0%,100%,0);
+}
+
+div {
+    display: block;
+}
+* {
+    padding: 0;
+    margin: 0;
+    font-family: MicrosoftYaHei;
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    tap-highlight-color: hsla(0,0%,100%,0);
+}
+    .breadcrumb-box[data-v-5e65c09a], .container[data-v-37ef1957] {
+    padding-top: 24px;
+}
+
+.el-breadcrumb {
+    font-size: 14px;
+    line-height: 1;
+}
+.el-breadcrumb__item {
+    float: left;
+}
+
+.el-breadcrumb__inner.is-link, .el-breadcrumb__inner a {
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .2s cubic-bezier(.645,.045,.355,1);
+    color: #303133;
+}
+.el-breadcrumb__separator[class*=icon] {
+    margin: 0 6px;
+    font-weight: 400;
+}
+.el-breadcrumb__separator {
+    margin: 0 9px;
+    font-weight: 700;
+    color: #c0c4cc;
+}
+
+
+[class*=" el-icon-"], [class^=el-icon-] {
+    font-family: element-icons!important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.el-breadcrumb__item:last-child .el-breadcrumb__inner, .el-breadcrumb__item:last-child .el-breadcrumb__inner:hover, .el-breadcrumb__item:last-child .el-breadcrumb__inner a, .el-breadcrumb__item:last-child .el-breadcrumb__inner a:hover {
+    font-weight: 400;
+    color: #606266;
+    cursor: text;
+}
+.el-breadcrumb__item:last-child .el-breadcrumb__separator {
+    display: none;
+}
+.el-breadcrumb__separator[class*=icon] {
+    margin: 0 6px;
+    font-weight: 400;
+}
+[class*=" el-icon-"], [class^=el-icon-] {
+    font-family: element-icons!important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.breadcrumb-box[data-v-5e65c09a], .container[data-v-37ef1957] {
+    padding-top: 24px;
+}
+.contanier[data-v-1ab5ef3c] {
+    padding-top: 24px;
+}
+.steps-box[data-v-5c16aaea] {
+    text-align: center;
+}
+.float-left {
+    float: left;
+}
+a {
+    color: #00a1d6;
+    text-decoration: none;
+    font-size: 12px;
+}
+.steps-list>.active .steps-icon[data-v-5c16aaea] {
+    color: #f25d8e;
+    border-color: #f25d8e;
+}
+.steps-icon[data-v-5c16aaea] {
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    color: #ccd0d7;
+    font-family: Arial;
+    font-weight: 700;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    line-height: 20px;
+    border: 2px solid #ccd0d7;
+    margin: 0 10px;
+    text-align: center;
+}
+steps-list>.active .steps-title[data-v-5c16aaea] {
+    color: #f25d8e;
+}
+.steps-title[data-v-5c16aaea] {
+    font-size: 18px;
+    color: #99a2aa;
+    margin-right: 10px;
+}
+.steps-list .steps-line[data-v-5c16aaea] {
+    height: 1px;
+    background: #e5e9ef;
+    width: 60px;
+    margin-top: 11px;
+}
+.steps-line[data-v-5c16aaea] {
+    border-top: 1px solid #e5e9ef;
+}
+.float-left {
+    float: left;
+}
+em, i {
+    font-style: normal;
+}
+a {
+    color: #00a1d6;
+    text-decoration: none;
+    font-size: 12px;
+}
+.steps-box[data-v-5c16aaea] {
+    text-align: center;
+}
+.steps-icon[data-v-5c16aaea] {
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    color: #ccd0d7;
+    font-family: Arial;
+    font-weight: 700;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    line-height: 20px;
+    border: 2px solid #ccd0d7;
+    margin: 0 10px;
+    text-align: center;
+}
+.steps-title[data-v-5c16aaea] {
+    font-size: 18px;
+    color: #99a2aa;
+    margin-right: 10px;
+}
+.container[data-v-21ab2178] {
+    padding: 60px 0;
+}
+.container {
+    width: 980px;
+    margin: 0 auto;
+}
+.form-desc[data-v-21ab2178], .form-group[data-v-21ab2178] {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.el-input {
+    position: relative;
+    font-size: 14px;
+}
+.el-input-group {
+    line-height: normal;
+    display: inline-table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+.el-input-group__prepend {
+    width: 4em!important;
+    text-align: center;
+}
+.el-input-group__prepend {
+    border-right: 0;
+}
+.el-input-group--append .el-input__inner, .el-input-group__prepend {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.el-input-group__append, .el-input-group__prepend {
+    background-color: #f5f7fa;
+    color: #909399;
+    vertical-align: middle;
+    display: table-cell;
+    position: relative;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    padding: 0 20px;
+    width: 1px;
+    white-space: nowrap;
+}
+.el-input.is-disabled .el-input__inner {
+    background-color: #f5f7fa;
+    border-color: #e4e7ed;
+    color: #c0c4cc;
+    cursor: not-allowed;
+}
+.el-input-group--prepend .el-input__inner, .el-input-group__append {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.el-input-group>.el-input__inner {
+    vertical-align: middle;
+    display: table-cell;
+}
+.el-input__inner {
+    -webkit-appearance: none;
+    background-image: none;
+    -moz-border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: inherit;
+    height: 40px;
+    line-height: 40px;
+    outline: 0;
+    padding: 0 15px;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
+}
+
+.form-message[data-v-21ab2178] {
+    min-height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #e40c0c;
+}
+
+.form-desc[data-v-21ab2178] {
+    color: #99a2aa;
+    font-size: 14px;
+    line-height: 30px;
+    min-height: 30px;
+}
+.form-desc[data-v-21ab2178], .form-group[data-v-21ab2178] {
+    width: 350px;
+    margin: 0 auto;
+}
+
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.form-desc a[data-v-21ab2178] {
+    font-size: 14px;
+}
+a {
+    color: #00a1d6;
+    text-decoration: none;
+    font-size: 12px;
+}
+.form-desc[data-v-21ab2178], .form-group[data-v-21ab2178] {
+    width: 350px;
+    margin: 0 auto;
+}
+.verify-code[data-v-21ab2178] {
+    width: 250px;
+    margin-right: 12px;
+}
+
+.el-input {
+    position: relative;
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+}
+
+.verify-btn[data-v-21ab2178] {
+    width: 88px;
+    height: 40px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.float-left {
+    float: left;
+}
+
+.form-message[data-v-21ab2178] {
+    min-height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #e40c0c;
+}
+element.style {
+    display: none;
+}
+.form-desc[data-v-21ab2178], .form-group[data-v-21ab2178] {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.btn-full[data-v-21ab2178] {
+    width: 100%;
+    height: 40px;
+}
+.el-button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+    -webkit-appearance: none;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    margin: 0;
+    -webkit-transition: .1s;
+    -o-transition: .1s;
+    -moz-transition: .1s;
+    transition: .1s;
+    font-weight: 500;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+#app .el-button--primary {
+    color: #fff;
+    background-color: #00a1d6;
+    border-color: #00a1d6;
+}
+
+.el-input::-webkit-scrollbar {
+    z-index: 11;
+    width: 6px;
+}
+.el-input::-webkit-scrollbar-corner, .el-input::-webkit-scrollbar-track {
+    background: #fff;
+}
+.el-input::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    width: 6px;
+    background: #b4bccc;
+}
+.el-input::-webkit-scrollbar-corner, .el-input::-webkit-scrollbar-track {
+    background: #fff;
+}
+.el-input::-webkit-scrollbar-track-piece {
+    background: #fff;
+    width: 6px;
+}
+
+
+
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+<div class="col-md-7">
+    <div data-v-5e65c09a="" class="breadcrumb-box">
+        <div data-v-5e65c09a="" aria-label="Breadcrumb" role="navigation" class="el-breadcrumb"><span data-v-5e65c09a=""
+                                                                                                      class="el-breadcrumb__item"><span
+                role="link" class="el-breadcrumb__inner is-link">账号安全</span><i
+                class="el-breadcrumb__separator el-icon-arrow-right"></i></span><span data-v-5e65c09a=""
+                                                                                      class="el-breadcrumb__item"
+                                                                                      aria-current="page"><span
+                role="link" class="el-breadcrumb__inner">设置密码</span><i
+                class="el-breadcrumb__separator el-icon-arrow-right"></i></span></div>
+    </div>
+    <div>
+        <div data-v-37ef1957="" class="container">
+            <div data-v-1ab5ef3c="" data-v-37ef1957="" class="contanier" style="margin-left:230px">
+                <div data-v-1ab5ef3c="">
+                    <div data-v-5c16aaea="" data-v-1ab5ef3c="" class="steps-box">
+                        <div data-v-5c16aaea="" class="clearfix steps-list"><a data-v-5c16aaea=""
+                                                                               href="#/setpassword/phone/verify"
+                                                                               class="router-link-exact-active router-link-active clearfix float-left active"><span
+                                data-v-5c16aaea="" class="float-left steps-icon">1</span>
+                            <div data-v-5c16aaea="" class="float-left steps-title">验证身份</div>
+                            <i data-v-5c16aaea="" class="steps-line float-left"></i></a><a data-v-5c16aaea=""
+                                                                                           href="#/setpassword/phone/set"
+                                                                                           class="clearfix float-left"><span
+                                data-v-5c16aaea="" class="float-left steps-icon">2</span>
+                            <div data-v-5c16aaea="" class="float-left steps-title">绑定手机</div>
+                            <i data-v-5c16aaea="" class="steps-line float-left"></i></a><a data-v-5c16aaea=""
+                                                                                           href="#/setpassword/phone/result"
+                                                                                           class="clearfix float-left"><span
+                                data-v-5c16aaea="" class="float-left steps-icon">3</span>
+                            <div data-v-5c16aaea="" class="float-left steps-title">绑定成功</div> <!----></a></div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-51fb285e="" data-v-37ef1957="">
+                <div data-v-21ab2178="" data-v-51fb285e="" class="container">
+                    <div data-v-21ab2178="" class="form-group">
+                        <div data-v-21ab2178="" class="el-input is-disabled el-input-group el-input-group--prepend"
+                             style="display: inline-table;">
+                            <div class="el-input-group__prepend">原手机号</div>
+                            <input type="text" disabled="disabled" autocomplete="off" placeholder=""
+                                   class="el-input__inner" id="phone"><!----><!----><!----></div>
+                        <div data-v-21ab2178="" class="form-message">
+                            <p data-v-21ab2178="" class="form-desc">手机无法使用？<a
+                                    data-v-21ab2178="" href="#/setpassword" class="router-link-active"
+                                    style="">更换验证方式</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div data-v-21ab2178="" class="form-group">
+                        <div data-v-21ab2178="" class="clearfix">
+                            <div data-v-21ab2178="" class="el-input verify-code float-left"><!----><input type="text"
+                                                                                                          autocomplete="off"
+                                                                                                          placeholder="请输入内容"
+                                                                                                          class="el-input__inner" id="sms_num">
+                                <!----><!----><!----></div>
+                            <button data-v-21ab2178="" type="button"
+                                    class="el-button verify-btn float-left el-button--default" onclick="send_sms()">
+                                <!---->
+                                <!----><span>获取验证码</span></button>
+                        </div>
+                        <div data-v-21ab2178="" class="form-message"></div>
+                    </div>
+                    <div data-v-21ab2178="" class="form-group" style="display: none;">
+                        <div data-v-21ab2178="" class="clearfix">
+                            <div data-v-21ab2178="" class="photo-code float-left el-input"><!----><input type="text"
+                                                                                                         autocomplete="off"
+                                                                                                         placeholder="请输入内容"
+                                                                                                         class="el-input__inner">
+                                <!----><!----><!----></div>
+                            <img data-v-21ab2178="" src="//passport.bilibili.com/web/captcha/img?key=0.450036878284233"
+                                 alt="" class="float-left verify-photo">
+                            <button data-v-21ab2178="" type="button"
+                                    class="el-button verify-btn float-left el-button--primary"><!---->
+                                <!----><span>验证</span></button>
+                        </div>
+                        <div data-v-21ab2178="" class="form-message"></div>
+                    </div>
+                    <div data-v-21ab2178="" class="form-group">
+                        <button data-v-21ab2178="" type="button" class="el-button btn-full el-button--primary"  onclick="next()"><!---->
+                            <!----><span>下一步</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var token = window.localStorage.getItem('user_token');
+    var username = window.localStorage.getItem('user_user');
+      $.ajax({
+       type:"get",
+       url:"http://127.0.0.1:8000/community/info",
+       beforeSend: function(request) {
+           request.setRequestHeader("Authorization", token);
+       },
+       success:function (result) {
+           if (200 == result.code){
+                var phone = result.phone
+                $('#phone').val(phone)
+        }
+        }
+    })
+
+
+    function  send_sms(){
+        var phone = $('#phone').val()
+        var post_data = {'phone':phone}
+        $.ajax({
+         type:'post',
+         url:"http://127.0.0.1:8000/v1/users/verify",
+         contentType: "application/json",
+		 data: JSON.stringify(post_data),
+		 dataType: "json",
+         success: function(result){
+					if (result.code == 200){
+						alert('短信已发送到您输入的手机号，请注意查收');
+					}else{
+						alert('短信服务器异常，请稍后再试');
+						}
+				}
+        })
+    }
+
+
+function next(){
+     var phone = $('#phone').val()
+     var sms_num = $('#sms_num').val();
+     var post_data = {'phone':phone,'sms_num':sms_num}
+     $.ajax({
+     url:"http://127.0.0.1:8000/v1/users/confirm",
+     type:'post',
+      contentType:'application/json',
+      data: JSON.stringify(post_data),
+      dataType: "json",
+     beforeSend:function(request){
+            request.setRequestHeader("Authorization",token)
+        },
+     success: function(result){
+        if (result.code == 200){
+            window.location.href = 'http://127.0.0.1:8000/verifyPhone';
+        }else{
+			alert(result.error)
+			}
+     }
+     })
+}
+
+</script>
+
+{% endblock %}

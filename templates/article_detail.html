@@ -1,0 +1,209 @@
+{% extends 'com_base.html' %}
+{% block mycss %}
+<!--<link rel="stylesheet" href="/static/css/content.css">-->
+<link rel="stylesheet" href="/static/css/comments.css">
+<!--	<link href="/static/css/base.css" rel="stylesheet">-->
+	<link href="/static/css/index.css" rel="stylesheet">
+<!--	<link href="/static/css/m.css" rel="stylesheet">-->
+	<script src="/static/js/jquery.easyfader.min.js"></script>
+	<script src="/static/js/scrollReveal.js"></script>
+	<script src="/static/js/wangEditor.js"></script>
+	<script src="/static/js/common1.js"></script>
+	<script src="/static/js/xcConfirm.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<div>
+
+
+    <div>
+        <span class=" small_colored_text_btn block_txt_c2 stxt">
+            <span class=" urltip nobr"
+                  style="font-size: 1.2em; margin-top: -1.8em; color: rgb(88, 105, 123);">
+            </span>
+            <a
+                class="white" href="javascript:void(0)" title="支持" >
+                <span class="upanddowm glyphicon glyphicon-thumbs-up">0</span></a>
+
+        </span>
+        <h4 id="postsubject0" style="line-height: inherit; vertical-align: -0.15em;">{{ article.title }}</h4>
+           <div>
+        {{ article.content }}
+    </div>
+        <div class="message"></div>
+    </div>
+</div>
+<script>
+
+ var html_body = '';
+ token = window.localStorage.getItem('user_token');
+    username = window.localStorage.getItem('user_user');
+    var url = document.location.toString();
+    var arrUrl = url.split("//");
+    //当前访问的博客博主
+    var author = arrUrl[1].split('/')[2];
+    var t_id = arrUrl[1].split('/')[4]
+    var get_url = "http://127.0.0.1:8000/community/v1/article/" + author + '?t_id=' + t_id
+    $.ajax({
+        // 请求方式
+        type:"get",
+        // url
+        url: get_url,
+        beforeSend: function(request) {
+            request.setRequestHeader("Authorization", token);
+        },
+        success:function (result) {
+            if (200 == result.code){
+            var messages_list = result.data.messages
+                html_body += '<div class="news_pl">';
+                html_body += '<h2>文章评论</h2>';
+                html_body += '<ul>';
+                html_body += '<div class="gbko">';
+                html_body += '<div class="l_box f_l" style="padding:20px;">';
+                html_body += '<div class="commentstitle">';
+                html_body += '<h3 id="comments">到现在<span class="commentsnumber">有' + result.data.messages_count + '条评论</span></h3>';
+                html_body += '</div>';
+
+                for(var message in messages_list){
+                	html_body += '<ol class="commentlist">';
+                    html_body += '<li>';
+                    html_body += '<div class="top"><a href="#"  class="url">' + messages_list[message].publisher  + '</a>';
+                    html_body += '<span class="time"> @';
+                    html_body += '<a href="#" title="">' + messages_list[message].created_time  + '</a>';
+                    html_body += '<a href="#" class="replyComment" mid=' + messages_list[message].id + '>回复</a>';
+                    html_body += '</span>';
+                    html_body += '</div>';
+
+                    avatar_url = 'http://127.0.0.1:8000/media/' + messages_list[message].publisher_avatar
+                    html_body  += '<div><img alt="" src="' + avatar_url + '" class="commentAvatar avatar-32 commentPhoto" height="32" width="32" /></div>';
+                    html_body += '<div class="body">';
+                    html_body += messages_list[message].content;
+                    html_body += '</div>';
+                    html_body += '</li>';
+
+                    var reply_list = messages_list[message].reply
+
+                    //console.log('reply_list is ')
+                    //console.log(reply_list)
+
+                    for(var rm in reply_list){
+                        //console.log(reply_list[rm])
+                        html_body += '<li>';
+                        html_body += '<div class="reply">';
+                        html_body += '<div class="top">';
+                        html_body += '<a href="#" class="url">' + reply_list[rm].publisher + '</a>';
+                        html_body += '<span class="time">';
+                        html_body += '@ <a href="#" title="">' + reply_list[rm].created_time + '</a>';
+                        html_body += '</span>';
+                        html_body += '</div>';
+                        var r_avatar_url = 'http://127.0.0.1:8000/media/' + reply_list[rm].publisher_avatar;
+                        html_body += '<div><img alt="" src=" ' + r_avatar_url +'" class="commentAvatar avatar-32 commentPhoto" height="32" width="32"></div>';
+                        html_body += '<div class="body">' + reply_list[rm].content  + '</div>';
+                        html_body += '</div>';
+                        html_body += '</li>';
+
+                    }
+					html_body += '</ol>';
+                }
+
+                //弹窗回复
+                html_body += '<div id="commentform">';
+                html_body += '<h3 id="respond">在这添加你的留言！</h3>';
+                html_body += '<dir id="editor" ></dir>';
+                html_body += '<br >';
+                html_body += '<p style="font-size: 12px">';
+                html_body += '<input id="id_article" name="article" type="hidden" value="1">';
+                html_body += '<input name="button" type="button" id="button" tabindex="5" value="提交" class="button" />';
+                html_body += '</p>';
+                html_body += '</div>';
+                $('.message').html(html_body);
+                //初始化登出操作
+                var E = window.wangEditor;
+                editor = new E('#editor');
+                editor.create();
+
+                $('#button').on('click', function(){
+                    var content = editor.txt.html();
+                    var post_data = {'content': content}
+                    $.ajax({
+                    // 请求方式
+                    type:"post",
+                    // contentType
+                    contentType:"application/json",
+                    // dataType
+                    dataType:"json",
+                    // url
+                    url:"http://127.0.0.1:8000/v1/messages/" + t_id ,
+                    // 把JS的对象或数组序列化一个json 字符串
+                    data:JSON.stringify(post_data),
+                    // result 为请求的返回结果对象
+                    beforeSend: function(request) {
+                      request.setRequestHeader("Authorization", token);
+                    },
+                    success:function (result) {
+                        if (200 == result.code){
+                            alert("发布成功")
+                            window.location.reload()
+                        }else{
+                            alert(result.error)
+                            window.location.href = '/login'
+                        }
+                     }
+                })
+            });
+
+            //弹窗
+            var list = document.getElementsByClassName('replyComment');
+            for (var i of list) {
+                i.addEventListener("click", function (ev) {
+                ev.preventDefault();
+                console.log('123123123')
+                var m_id = this.getAttribute('mid')
+                var txt=  "请输入回复：";
+                window.wxc.xcConfirm(txt, window.wxc.xcConfirm.typeEnum.input,{
+                    onOk:function(reply){
+                        //console.log(reply);
+                        var post_data = {'content': reply, 'parent_id': m_id};
+                        var reply_url =  "http://127.0.0.1:8000/v1/messages/" + t_id
+                        $.ajax({
+                        // 请求方式
+                        type:"post",
+                        // contentType
+                        contentType:"application/json",
+                        // dataType
+                        dataType:"json",
+                        // url
+                        url: reply_url,
+                        // 把JS的对象或数组序列化一个json 字符串
+                        data:JSON.stringify(post_data),
+                        // result 为请求的返回结果对象
+                        beforeSend: function(request) {
+                          request.setRequestHeader("Authorization", token);
+                        },
+                        success:function (result) {
+                            if (200 == result.code){
+                                alert("发布成功")
+                                window.location.reload()
+                            }else{
+                                alert(result.error)
+                                window.location.href = '/login'
+                                }
+                            }
+                        })
+                    }
+                });
+              }, false);
+            }
+
+            }else{
+
+                  alert(result.error)
+
+                }
+            }
+        })
+
+</script>
+{% endblock %}
+

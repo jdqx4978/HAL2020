@@ -1,0 +1,184 @@
+{% extends 'center_base.html' %}
+{% block mycss %}
+
+<style>
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="main_con clearfix" style="border:1px solid #e1e2e5;border-radius: 4px">
+        <div class="left_menu_con clearfix" style="border:1px solid #e1e2e5;border-radius: 4px;">
+            <ul style="border:1px solid #e1e2e5;border-radius: 4px;">
+                <h3>用户中心</h3>
+                <li><a href="center/{{ user.username }}" class="active">个人信息</a></li>
+                <li><a href="/avatar/{{ user.username }}">我的头像</a></li>
+                <li><a href="/safe/{{ user.username }}">安全中心</a></li>
+                <li><a href="">全部订单</a></li>
+                <li><a href="">收货地址</a></li>
+            </ul>
+        </div>
+        <div class="right_content clearfix" >
+            <div class="info_con clearfix" style="margin-left:-18px">
+                <h3 class="common_title2">基本信息</h3>
+                <div class="user_info_list">
+                    <div><span>用户名：</span>{{ user.username }}</div>
+                    <div><span>昵称：</span><input type="text" name="" id="nickname" value="{{ user.nickname }}"
+                                                style="height:28px"></div>
+                    <div><span>邮件：</span>{{ user.email }}</div>
+                    <div><span>联系方式：</span>{{ user.phone }}</div>
+                    <div><span>性别：</span>
+                        <div class="f-cb">
+                            {% if user.gender == '1' %}
+                            <label class="check" style="margin-left:-30px"><input name="gender" type="radio"
+                                                                                  class="u-rdi" value="1"
+                                                                                  checked="checked">
+                                男</label>
+                            {% else %}
+                            <label class="check" style="margin-left:-30px"><input name="gender" type="radio"
+                                                                                  class="u-rdi" value="1">
+                                男</label>
+                            {% endif %}
+                            {% if user.gender == '2' %}
+                            <label class="check"><input name="gender" type="radio" class="u-rdi" value="2"
+                                                        checked="checked">
+                                女</label>
+                            {% else %}
+                            <label class="check"><input name="gender" type="radio" class="u-rdi" value="2">
+                                女</label>
+                            {% endif %}
+                            {% if not user.gender or user.gender == '0' %}
+                            <label class="check"><input name="gender" type="radio" class="u-rdi" checked="checked"
+                                                        value="0"> 保密</label>
+                            {% else %}
+                            <label class="check"><input name="gender" type="radio" class="u-rdi"
+                                                        value="0"> 保密</label>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div><span>生日：</span>
+                        <select id="selYear"></select>年
+                        <select id="selMonth"></select>月
+                        <select id="selDay"></select>日
+
+                    </div>
+                    <div style="margin-top:20px;margin-left:100px">
+                        <button onclick="save()">保 存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+	var token = window.localStorage.getItem('user_token');
+    var username = window.localStorage.getItem('user_user');
+      $.ajax({
+       type:"get",
+       url:"http://127.0.0.1:8000/community/info",
+       beforeSend: function(request) {
+           request.setRequestHeader("Authorization", token);
+       },
+       success:function (result) {
+           if (200 == result.code){
+             var html = '';
+                html += '<li><a href="/center/'+ result.username + '">' + result.username +'</a></li>';
+                html += '<li class="dropdown">';
+                html +='<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"';
+                html += 'aria-expanded="false">更多操作 <span class="caret"></span></a>';
+                html += '<ul class="dropdown-menu">';
+                 html += '<li><a href="/center/'+ result.username + '">个人中心</a></li>';
+                 html +='<li><a href="#">修改密码</a></li>';
+                 html +='<li><a href="#" onclick="logout()">注销</a></li>';
+                 html +='</ul>';
+                 html +='</li>';
+                $('#logi').html(html);
+                var selYear = window.document.getElementById("selYear");
+                var selMonth = window.document.getElementById("selMonth");
+                var selDay = window.document.getElementById("selDay");
+                var birthday = result.birthday
+                var birthday_ = birthday.split('/')
+                // 新建一个DateSelector类的实例，将三个select对象传进去
+                if (!birthday){
+                new DateSelector(selYear, selMonth, selDay, 2015, 1, 1);
+                }else{
+                new DateSelector(selYear, selMonth, selDay, birthday_[0], birthday_[1], birthday_[2]);
+                }
+                 //获取选中年月日的值,这里有个问题,默认的年月日如果不选择,会发生报错,这时候应该设置文本域默认的value值和默认的年月日一样,就可以避免错误了
+                var selectY = document.getElementById('selYear');
+                var selectM = document.getElementById('selMonth');
+                var selectD = document.getElementById('selDay');
+                var h1 = document.getElementById('HF1');
+                var h2 = document.getElementById('HF2');
+                var h3 = document.getElementById('HF3');
+                selectY.onchange = function () {
+                h1.value = selectY.options[selectY.selectedIndex].text;
+                    }
+                selectM.onchange = function () {
+                    h2.value = selectM.options[selectM.selectedIndex].text;
+                }
+                selectD.onchange = function () {
+                    h3.value = selectD.options[selectD.selectedIndex].text;
+                }
+                         }else{
+                            var html = '';
+                            html+='<li><a href="/login">登录</a></li>';
+                            html +='<li><a href="/register">注册</a></li>'
+                            $('#logi').html(html);
+
+             }
+         }
+    })
+
+
+
+
+</script>
+<script>
+
+    var token = window.localStorage.getItem('user_token');
+    var username = window.localStorage.getItem('user_user');
+
+    function save(){
+        var nickname = $('#nickname').val()
+        var gender=document.getElementsByName("gender");//不能getElementById，ById又只会读数组第一个值
+        var gender_id;
+        for(var i = 0; i < gender.length; i++)
+           {
+            if(gender[i].checked)
+                gender_id=gender[i].value;
+            }
+        var year = $('#selYear').val()
+        var month = $('#selMonth').val()
+        var day = $('#selDay').val()
+        var birthday = year +"/" + month +"/"+ day
+        var post_data = {'nickname':nickname,'gender':gender_id,'birthday':birthday}
+        $.ajax({
+            url:'http://127.0.0.1:8000/v1/users/change/'+ username,
+            type:'post',
+            contentType:"application/json",
+            dataType:"json",
+            data:JSON.stringify(post_data),
+            beforeSend: function(request) {
+            request.setRequestHeader("Authorization", token);
+                },
+            success:function (result) {
+            if (200 == result.code){
+                alert("修改成功")
+            }else{
+                alert(result.error)
+                window.location.href = '/login'
+            }
+           }
+        })
+
+    }
+
+
+
+</script>
+
+{% endblock %}

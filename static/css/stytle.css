@@ -1,0 +1,114 @@
+/*
+[name]MH[/name]
+[iconbgcolor]#000000[/iconbgcolor]
+Powered by Discuz! X
+*/
+@font-face {
+  font-family: 'sz';
+  src: url('fonts/sz.eot?jftt06');
+  src: url('fonts/sz.eot?jftt06#iefix') format('embedded-opentype'), url('fonts/sz.ttf?jftt06') format('truetype'), url('fonts/sz.woff?jftt06') format('woff'), url('fonts/sz.svg?jftt06#sz') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.m10A{margin:10px 20px;border:none;}
+html { background:#14171c url(background.jpg) no-repeat; }
+#nv { background-color: #181818; /* background-image: url(nv.png);  */}
+	#nv li, #nv li a:hover, #nv li.hover a, #nv li.hover a:hover {/*  background-image: url(nv_a.png) !important;  */}
+	#nv li.a { background-color: #181818; }
+#scbar {border-color: #FCC;}
+	.scbar_icon_td,.scbar_txt_td,.scbar_btn_td,#scbar_btn{background: url(search.png) -15px -57px;float:left;width:14px;height:30px;}
+	.scbar_txt_td{background-position:0 -100px;width:190px;}
+	.scbar_btn_td{background-position:-14px -57px;width:30px;-moz-transform:scaleX(-1);-webkit-transform:scaleX(-1);-o-transform:scaleX(-1);transform:scaleX(-1);/*IE*/filter:FlipH;}
+	#scbar_btn{width:30px;height:30px;background-position:2px -149px;outline:none;}
+
+.bm_h, .tl th, .tl td { border-bottom-color: #CDCDCD; }
+.fl .bm_h {font-size:1.5em;font-weight:bold;color:#656565;/*  border-color: #FCC; background: #FFECEC url(titlebg.png) repeat-x 0 0;  */}
+
+/* é‡å®šä¹‰ {SPECIALBG} */
+.bmn, .bm_h, td.pls, .ad td.plc, div.exfm, .tb a, .tb_h, .ttp li.a a, div.uo a, input#addsubmit_btn, #gh .bm .bm_h {background-color: #f6f6f6; }
+
+.ct2_a, .ct3_a { background-image: url(vlineb.png?v=1); }
+	.ct3_a .bm { background-color: transparent; }
+	.tbn li.a { background:#f6f6f6;}
+	#nv_portal.pg_portalcp .ct2_a_r, #nv_forum.pg_post .ct2_a_r { background-image: none; padding:10px;}
+
+/* é‡å®šä¹‰ {SPECIALBORDER} */
+.bmn, .pg a, .pgb a, .pg strong, .card, .card .o, div.exfm  { border-color: #ccc; }
+.pg strong { background-color: #FCC; }
+.pn, .tb .o, .tb .o a { background-image: url(pn.png); }
+	.pnc, a.pnc, .tb .o {/* border-color: #900; */}
+
+.mi .moodfm_input { background-image: url(mood_input.png); }
+	.mi .hover .moodfm_input { background-color: #FCC !important; }
+
+.ad td.pls { background-color:#c2d5e3; }
+
+/* é‡å®šä¹‰å­—ä½“ */
+#qmenu, .fl .bm_h h2 a, .xi1, #um .new, .topnav .new, .sch .new, .el .ec .hot em, .pll .s a.joins, #diy_backup_tip .xi2 { color: #BA350F; }
+.tipsNumColor{color:#d00f10;}
+.fl .bm_h h2 a{color:#666;text-decoration:none;}
+.pll .s a.go { color: #FFF; }
+.xi2, .xi2 a { color: #000; }
+
+/* é‡å®šä¹‰æŒ‰é’® */
+.pgs #newspecial, .pgs #newspecialtmp { float: left; background: url(pn_post.png) no-repeat 0 0;}
+#post_reply, #post_replytmp { float: left; background: url(pn_reply.png) no-repeat 0 0; }
+	#newspecial img, #newspecialtmp img, #post_reply img, #post_replytmp img { opacity: 0; filter: alpha(opacity=0); }
+.moodfm_btn { background-image: url(mood_input_btn.png) !important; }
+#create_group_btn { display: block; background: url(create_group.png) no-repeat 0 0; }
+	#create_group_btn img { opacity: 0; filter: alpha(opacity=0); }
+.el .ec .hot, .clct_list .xld .m { background-image: url(hotspot.gif); }
+.pll .s { background-image:url(polljoins.gif); }
+
+/* é‡å®šä¹‰ Tab */
+.tb .a a { border-bottom-color: #FAF6ED; background:#f6f6f6 !important; }
+
+/* é‡å®šä¹‰å¹¿æ’­ */
+#uhd, #flw_header .bar { background-color: #eaeaea; }
+	#uhd .tb a, #flw_header .bar { border-top-color: #FFE6E6; }
+	#uhd .tb .a a { border-bottom-color: #FAF6ED; }
+.flw_replybox { background-color: #FFF9F9; }
+	.flw_replybox .px, .flw_autopt, #flw_header .tedt { border-color: #FCC; }
+.pg_follow #fastpostsubmit { background-image: url(flw_post.png); }
+.flw_replybox .pnc { background-image: url(pn_reply.png); }
+.flw_replybox td table .pnc { background-image: url(pn_rt.png); }
+#flw_post_extra .sec { border-color: #FFE6E6; background-color: #FFF9F9; }
+
+/* é‡å®šä¹‰ç‰ˆå—å¿«é€Ÿè·³è½¬å’Œä¾§è¾¹å¯¼èˆª */
+#fjump_menu li.a a { background-color: #FFF9F9; }
+.bdl, .bdl dt, .bdl dd.bdl_a a { border-color: #FCC; background-color: #FFF9F9; }
+	.bdl dt { background-image: url(titlebg_sd.png); }
+.bdl dd.bdl_a a { color: #BA350F; }
+
+/* é‡å®šä¹‰ä¸‹æ‹‰èœå• */
+.p_pop a { border-bottom-color: #FFECEC; }
+	.p_pop a:hover, .p_pop a.a, #sctype_menu .sca { background-color: #6374a8; color: #fff; }
+	.blk a:hover { background-color: transparent; }
+
+/* é‡å®šä¹‰å¥½å‹åˆ—è¡¨ */
+#nv_home .buddy li { background-color: transparent; border: none; }
+/*é‡å®šä¹‰ç™»é™†ä¿¡æ¯*/
+.TC_top_gnb .ifram .login_btn{border:none;padding:10px 7px;}
+.TC_top_gnb .ifram .reg_btn{border:none;padding:10px 7px;}
+.TC_top_gnb .sys_R .ifram .tips-top{width:80px;float:right;padding:0 18px;}
+.TC_top_gnb .sys_R .ifram .tips-top a{width:34px;height:34px;padding:3px;}
+.TC_top_gnb .sys_R .ifram .tips-top a img{width:34px;height:34px;border-radius:20px;}
+.TC_top_gnb .sys_R .ifram .tips-top .maskface{width:40px;height:40px;top:0;left:0;background:url(face_mask_small.png) no-repeat;}
+.TC_top_gnb .sys_R .ifram .avt,.TC_top_gnb .sys_R .ifram .avt a{width:80px;height:80px;padding:0;margin:0;}
+.TC_top_gnb .sys_R .ifram .avt img{border-radius:40px;box-shadow:0 0 3px rgba(0,0,0,0.25);}
+
+/*äºŒç»´ç åº”ç”¨*/
+.ewm ul li em{background:url(ewm.jpg) no-repeat;}
+.ewm ul li h3,.frame-2-1-r .dxb_bc div ul li em{height:24px;background:url(icon.png) no-repeat;padding-left:35px;font-size:1.3em;margin:8px 0;}
+.ewm ul li.wx em{background-position:0 0;}
+.ewm ul li.wb em{background-position:0 -130px;}
+.ewm ul li.wx h3{background-position:0 0;}
+.ewm ul li.wb h3{background-position:0 -24px;}
+.video_pic a em{background:url(videoplaybtn_bg.png) center center;top:0;left:0;opacity:0;filter:alpha(opacity=0);transition: opacity 1s;-moz-transition: opacity 1s;-webkit-transition: opacity 1s;-o-transition: opacity 1s;}
+.video_pic a:hover em{opacity:1;filter:alpha(opacity=100);}
+
+.frame-2-1-r .dxb_bc div ul li em{font-size:1em;padding-left:18px;height:14px;line-height:14px;color:#677286;background-position:0 -49px;margin:0;}
+
+#scrolltop #diy-tg{background:url(diy.png) no-repeat;}
+#scrolltop #diy-tg:hover{background-position:-40px 0;}
+#scform_tb li{display:none;}

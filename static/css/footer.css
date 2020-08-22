@@ -1,0 +1,227 @@
+.bili-footer {
+    width: 100%;
+    padding-top: 20px;
+    color: #99a2aa;
+    text-align: center;
+    font-size: 12px;
+}
+body, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+div {
+    display: block;
+}
+.bili-footer .footer-wrp {
+    background-color: #f6f9fa;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+.bili-footer .footer-cnt {
+    width: 980px;
+    margin: 0 auto;
+}
+
+.bili-footer .clearfix {
+    zoom: 1;
+}
+.bili-footer .boston-postcards {
+    list-style: none;
+    margin: 0 auto;
+    float: left;
+    margin-bottom: 30px;
+}
+ul, menu, dir {
+    display: block;
+
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+.bili-footer .boston-postcards li:first-child {
+    border-left: 0;
+    padding-left: 0!important;
+}
+
+.bili-footer .boston-postcards li .tips {
+    margin-bottom: 22px;
+}
+.bili-footer .boston-postcards li .cards {
+    float: left;
+    width: 100px;
+    position: relative;
+    margin-bottom: 16px;
+}
+.bili-footer a {
+    color: #222;
+}
+.bili-footer a {
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.bili-footer .partner {
+    padding: 0;
+    text-align: left;
+    margin: 0 auto;
+    height: 80px;
+}
+.bili-footer a {
+    color: #222;
+}
+
+.bili-footer a {
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+element.style {
+    padding-top: 0px;
+}
+
+.bili-footer .partner .left {
+    float: left;
+}
+
+.bili-footer .partner .left, .bili-footer .partner .right {
+    line-height: 24px;
+}
+.bili-footer .partner .partner-banner {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABxCAMAAAAdzFY0AAAA9lBMV…KYwjjgj/ZlbX/v+fJ3302/rH/r89vxbn7vWR3/6cvvv7av5EG6VSdVr0sAAAAASUVORK5CYII=) no-repeat;
+    width: 100px;
+    height: 80px;
+}
+.bili-footer .pic962110 {
+    width: 100px;
+    height: 40px;
+    margin-bottom: 5px;
+    background-image: url(//s1.hdslb.com/bfs/static/jinkela/long/images/pic962110.png);
+    background-size: cover;
+}
+.bili-footer .block.right {
+    position: relative;
+    width: 100%;
+}
+
+.bili-footer .right {
+    float: right;
+}
+.bili-footer .block.right div {
+    position: relative;
+    width: 82px;
+    height: 80px;
+    float: left;
+}
+.bili-footer .block.right .phone .pic {
+    background: url(/static/images/icons1.png) no-repeat -1024px -194px;
+}
+
+.bili-footer .block.right .pic {
+    position: relative;
+    margin-left: 11px;
+    width: 60px;
+    height: 60px;
+}
+.bili-footer .block.right em {
+    position: absolute;
+    width: 82px;
+    line-height: 14px;
+    float: left;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font-weight: normal;
+}
+i, cite, em, var, address, dfn {
+    font-style: italic;
+}
+.bili-footer .block.right .qrcode-box-wrp {
+    width: 130px;
+    height: 130px;
+    background: #fff;
+    margin-top: -146px;
+    right: -23px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s;
+    z-index: 100000;
+}
+.bili-footer .block.right .weibo .pic {
+    background: url(/static/images/icons1.png) no-repeat -1024px -322px;
+}
+
+.bili-footer .block.right .weixin .pic {
+    color: #222;
+    background: url(/static/images/icons1.png) no-repeat -1024px -66px;
+}
+
+.bili-footer .partner {
+    padding: 0;
+    text-align: left;
+    margin: 0 auto;
+    height: 80px;
+}
+.bili-footer .partner .left, .bili-footer .partner .right {
+    line-height: 24px;
+}
+
+.bili-footer .partner .left, .bili-footer .partner .right {
+    line-height: 24px;
+}
+.bili-footer .pic962110 {
+    width: 100px;
+    height: 40px;
+    margin-bottom: 5px;
+    background-image: url(/static/images/pic962110.png);
+    background-size: cover;
+}
+.bili-footer p, .bili-footer span {
+    margin-bottom: 5px;
+    padding: 0;
+}
+p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.bili-footer p, .bili-footer span {
+    margin-bottom: 5px;
+    padding: 0;
+}
+.bili-footer .partner .left a, .bili-footer .partner .right a {
+    color: #99a2aa;
+}
+.bili-footer .boston-postcards li {
+    float: left;
+    text-align: left;
+    list-style: none;
+    width: 300px;
+    height: 112px;
+    padding-right: 25px;
+    padding-left: 24px;
+    line-height: 1;
+    border-left: solid 1px #e5e9ef;
+    font-size: 14px;
+}
+.bili-footer .boston-postcards li:first-child {
+    border-left: 0;
+    padding-left: 0!important;
+}
+.bili-footer .boston-postcards li:first-child {
+    border-left: 0;
+    padding-left: 0!important;
+}
+
+
+
+
+
+
+
