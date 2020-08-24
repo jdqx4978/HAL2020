@@ -17,21 +17,20 @@
                 <li><a href="center/{{ user.username }}" class="active">个人信息</a></li>
                 <li><a href="/avatar/{{ user.username }}">我的头像</a></li>
                 <li><a href="/safe/{{ user.username }}">安全中心</a></li>
-                <li><a href="">全部订单</a></li>
-                <li><a href="">收货地址</a></li>
+
             </ul>
         </div>
         <div class="right_content clearfix" >
             <div class="info_con clearfix">
                 <h3 class="common_title2">基本信息</h3>
-                <div class="user_info_list" style="">
+                <div class="user_info_list" style="padding-left:30px">
                     <div><span>用户名：</span>{{ user.username }}</div>
                     <div><span>昵称：</span><input type="text" name="" id="nickname" value="{{ user.nickname }}"
                                                 style="height:28px"></div>
                     <div><span>邮件：</span>{{ user.email }}</div>
                     <div><span>联系方式：</span>111{{ user.phone }}</div>
                     <div><span>性别：</span>
-                        <div class="f-cb" style="padding-top:0px">
+                        <div class="f-cb" style="padding-top:-5px;margin-left:70px;margin-top:-30px">
                             {% if user.gender == '1' %}
                             <label class="check" style="margin-left:-30px"><input name="gender" type="radio"
                                                                                   class="u-rdi" value="1"

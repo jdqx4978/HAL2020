@@ -78,32 +78,17 @@ def result_view(request):
     return render(request, 'changepswd3.html')
 
 
-# @logging_check
-# def diggit_view(request):
-#     user_id = request.myuser.id
-#     json_str = request.body
-#     json_obj = json.loads(json_str)
-#     is_up = json_obj['is_up']
-#     print(is_up)
-#     article_id = json_obj['article_id']
-#     up_ret = Article.objects.filter(author=user_id, id=article_id).first()
-#     if up_ret:
-#         result = {'code': 10002, 'error': '你已点过'}
-#         return JsonResponse(result)
-#     else:
-#         article = Article.objects.get(author=user_id, id=article_id, is_up=is_up)
-#         with transaction.atomic():
-#             if is_up:
-#                 Article.objects.filter(id=article_id).update(like=F('like') + 1)
-#                 result = {'code': 200}
-#                 return JsonResponse(result)
 def bindphone_view(request):
     return render(request, 'bindphone1.html')
 
 
 def verify_phone(request):
-    return render(request,'bindphon2.html')
+    return render(request, 'bindphon2.html')
 
 
 def result_1_view(request):
-    return render(request,'re')
+    return render(request, 'result1.html')
+
+
+def base_foot(request):
+    return render(request, 'base_foot.html')

@@ -24,6 +24,9 @@ from user import views as user_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('community/', include('community.urls')),
+    path('cart/', include('cart.urls')),  # 购物车
+    path('goods/', include('goods.urls')),  # 商品分类页面
+    path('tinymce/', include('tinymce.urls')),  # 使用富文本编辑框配置confurl
     path('index', views.index_view),
     path('login', views.login_view),
     path('logout',views.logout_view),
@@ -48,3 +51,6 @@ urlpatterns = [
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+

@@ -8,11 +8,27 @@
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
     <script src="/static/js/common2.js"></script>
+    <link rel="stylesheet" href="/static/css/footer.css">
     <style>
         .bottom_article span{
             margin_right:20px;
         }
+          .main_con clearfix{
+        border:1px solid #e1e2e5;
+        border-radius: 4px
+    }
+    .left_menu_con ul{
+        border:1px solid #e1e2e5;
+        border-radius: 4px
+    }
+    .right_content{
+        border:1px solid #e1e2e5;border-radius: 4px;
+        margin-left:-40px;
+    }
 
+    .common_title2{
+        margin-left:20px
+    }
     </style>
 </head>
 
@@ -36,7 +52,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                    <li><a href="#">首页</a></li>
+                    <li><a href="/index">首页</a></li>
                     <li class="active"><a href="#">论坛 <span class="sr-only">(current)</span></a></li>
                 </ul>
 
@@ -48,8 +64,8 @@
 </div>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
-            <div class="panel panel-danger">
+        <div class="col-md-2" style="margin-left:120px;">
+            <div class="panel panel-danger" >
                 <div class="panel-heading">广告位</div>
                 <div class="panel-body">
                     联系电话：99999
@@ -67,7 +83,7 @@
         </div>
         <div class="col-md-7">
             {% for article in article_list %}
-            <div style="margin-bottom:10px">
+            <div style="margin-bottom:10px;border:1px solid #e1e2e5;border-radius: 4px;padding:15px 15px;margin:10px 10px">
                 <h3><a href="/community/{{ article.author.username }}/article/{{ article.id }}">{{ article.title }}</a></h3>
                 <div class="media">
                     <div class="media-left">
@@ -90,24 +106,122 @@
             {% endfor %}
 
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             <div class="panel panel-danger">
-                <div class="panel-heading">广告位</div>
+                <div class="panel-heading">热搜</div>
                 <div class="panel-body">
-                    联系电话：99999
+                    待定
                 </div>
             </div>
 
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    <h3 class="panel-title">草榴社区</h3>
+                    <h3 class="panel-title">合作网站</h3>
                 </div>
                 <div class="panel-body">
                     <a href="http://www.baidu.com">点我</a>
                 </div>
             </div>
         </div>
+<div class="footer bili-footer" >
+    <div class="footer-wrp" style="margin-top:600px">
+        <div class="footer-cnt clearfix report-wrap-module">
+            <ul class="boston-postcards">
+                <li>
+                    <div class="tips">官网</div>
+                    <div class="cards"><a target="_blank" href="//www.bilibili.com/blackboard/aboutUs.html">关于我们</a>
+                    </div>
+                    <div class="cards"><a target="_blank" href="//www.bilibili.com/blackboard/contact.html">联系我们</a>
+                    </div>
+                    <div class="cards"><a target="_blank" href="//www.bilibili.com/blackboard/join.html">加入我们</a></div>
+                    <div class="cards"><a target="_blank"
+                                          href="//www.bilibili.com/blackboard/friends-links.html">友情链接</a></div>
+                    <div class="cards"><a target="_blank"
+                                          href="//account.bilibili.com/account/official/home">游戏认证</a></div>
+                    <div class="cards"><a target="_blank" href="http://ir.bilibili.com">Investor Relations</a></div>
+                </li>
+                <li>
+                    <div class="tips">传送门</div>
+                    <div class="cards"><a target="_blank" href="">帮助中心</a></div>
+                    <div class="cards"><a target="_blank" href="">活动专题页</a>
+                    </div>
+                    <div class="cards"><a target="_blank" href="">侵权申诉</a></div>
+                    <div class="cards"><a target="_blank" href="">活动中心</a>
+                    </div>
+                    <div class="cards"><a target="_blank" href="">壁纸站</a></div>
+                    <div class="cards"><a target="_blank" href="">名人堂</a>
+                    </div>
 
+                </li>
+                <li style="margin-left:30px">
+                    <div class="block right"><a target="_blank">
+                        <div class="phone">
+                            <div class="pic" id="footer-mobile-app"></div>
+                            <em>客户端下载</em>
+                            <div class="qrcode-box-wrp">
+                                <div class="qrcode-box qrcode-app">
+                                    <div class="qrcode-box-arrow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a><a target="_blank" href="">
+                        <div class="weibo">
+                            <div class="pic"></div>
+                            <em>新浪微博</em>
+                            <div class="qrcode-box-wrp">
+                                <div class="qrcode-box qrcode-weibo">
+                                    <div class="qrcode-box-arrow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a><a id="weixin">
+                        <div class="weixin">
+                            <div class="pic"></div>
+                            <em>官方微信</em>
+                            <div class="qrcode-box-wrp bigvip-qrcode">
+                                <div class="qrcode-box qrcode-weixin">
+                                    <div class="qrcode-box-arrow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a></div>
+                </li>
+            </ul>
+            <div class="partner">
+                <div class="block left" style="padding-top: 0px;">
+                    <div class="partner-banner"></div>
+                    <div class="pic962110"></div>
+                    <a id="jvs-cert" href="https://webcert.cnmstl.net/cert/grade?sn=d3ec53ae63a84350945198bab0251d59"
+                       target="_blank" style="display: block; max-width: 132px;">
+                        <div id="jvs-certifyOuter" class="jvs-certifyOuter" style="width: 100%; position: relative;">
+                           <img
+                                id="certify-img2"
+                                class="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         act"
+                                crossorigin="anonymous" src="/static/images/confirm.png"
+                                style="position: absolute; left: 0px; top: 0px; display: block; max-height: none; width: 100%; height: auto; opacity: 1; border: none;">
+                        </div>
+                    </a></div>
+                <div class="block left" style="margin: 0px 68px 0 115px;line-height:24px;float: none;"><p>广播电视节目制作经营许可证：<span>（沪）字第1248号</span>
+                    | 网络文化经营许可证：<span>沪网文[2016]2296-134号</span> | 信息网络传播视听节目许可证：<span>0910417</span> | 互联网ICP备案：<a
+                            href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备13002172号-3</a> 沪ICP证：<span>沪B2-20100043</span>
+                    | 违法不良信息举报邮箱：help@bilibili.com | 违法不良信息举报电话：4000233233转3
+                    | <a href="" target="_blank">营业执照</a></p>
+                    <p><a href="http://www.shjbzx.cn" target="_blank"><i
+                            class="icons-footer icons-footer-report"></i><span> 上海互联网举报中心</span></a> |<a
+                            href="http://jb.ccm.gov.cn/" target="_blank">12318 全国文化市场举报网站</a> |<a target="_blank"
+                                                                                                  href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011002002436"><img
+                            src="/static/images/beiantubiao.png" style="vertical-align: top;"> 沪公网安备
+                        31011002002436号 |</a><a href="mailto:userreport@bilibili.com">儿童色情信息举报专区</a></p>
+                    <p><a href="http://report.12377.cn:13225/toreportinputNormal_anis.do"
+                          target="_blank">网上有害信息举报专区：<img src="/static/images/12377.png" width="16"
+                                                          height="16" style="vertical-align: sub;"> 中国互联网违法和不良信息举报中心</a>
+                    </p>
+                    <p>亲爱的市民朋友，上海警方反诈劝阻电话“962110”系专门针对避免您财产被骗受损而设，请您一旦收到来电，立即接听。</p>
+                    <p>公司名称：上海xxxx科技有限公司 | 公司地址：上海市xxxxxx485号 | 电话：xxx-xxxxxxxxx</p></div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 

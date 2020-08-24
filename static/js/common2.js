@@ -17,7 +17,6 @@
                 html += 'aria-expanded="false">更多操作 <span class="caret"></span></a>';
                 html += '<ul class="dropdown-menu">';
                  html += '<li><a href="/center/'+ result.username + '">个人中心</a></li>';
-                 html +='<li><a href="#">修改密码</a></li>';
                  html +='<li><a href="#" onclick="logout()">注销</a></li>';
                  html +='</ul>';
                  html +='</li>';
@@ -41,7 +40,7 @@
 		  dataType: 'json',
           success:function(result){
             if(result.code==200){
-                if(confirm("确定shanch吗？")){
+                if(confirm("确定退出吗？")){
                 window.localStorage.removeItem('user_token');
                 window.localStorage.removeItem('user_user');
                 window.location.href= '/index';

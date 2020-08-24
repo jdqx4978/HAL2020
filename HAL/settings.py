@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'user',
     'community',
     'message',
+    'cart',
+    'goods',
+    'tinymce',
 ]
 
 MIDDLEWARE = [

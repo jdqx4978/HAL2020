@@ -41,6 +41,7 @@ def token(request):
         return JsonResponse(result)
     # 签发token
     token = make_token(username)
+    # request.session['uname'] = username
     result = {'code': 200, 'username': username, 'data': {'token': token.decode()}}
     return JsonResponse(result)
 

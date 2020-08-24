@@ -27,7 +27,8 @@ def logging_check(func):
         username = res['username']
         user = UserProfile.objects.get(username=username)
         request.myuser = user
-
+        # request.session['user_id'] = user.id
+        # request.session['user_name'] = username
         return func(request, *args, **kwargs)
 
     return wrap

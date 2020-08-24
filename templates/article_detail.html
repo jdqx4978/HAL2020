@@ -17,18 +17,19 @@
 <div>
 
 
-    <div>
-        <span class=" small_colored_text_btn block_txt_c2 stxt">
+    <div style="border:1px solid #e1e2e5;border-radius: 4px;margin-bottom:50px">
+        <span class=" small_colored_text_btn block_txt_c2 stxt" >
             <span class=" urltip nobr"
                   style="font-size: 1.2em; margin-top: -1.8em; color: rgb(88, 105, 123);">
             </span>
-            <a
-                class="white" href="javascript:void(0)" title="支持" >
-                <span class="upanddowm glyphicon glyphicon-thumbs-up">0</span></a>
 
         </span>
-        <h4 id="postsubject0" style="line-height: inherit; vertical-align: -0.15em;">{{ article.title }}</h4>
+        <div>作者：{{ article.author.nickname }}</div>
+        <h2 id="postsubject0" style="line-height: inherit; vertical-align: -0.15em;">{{ article.title }}</h2>
            <div>
+
+           </div>
+        <div style="margin-top:10px">
         {{ article.content }}
     </div>
         <div class="message"></div>
@@ -56,7 +57,7 @@
         success:function (result) {
             if (200 == result.code){
             var messages_list = result.data.messages
-                html_body += '<div class="news_pl">';
+                html_body += '<div class="news_pl" style="margin-top:40px;">';
                 html_body += '<h2>文章评论</h2>';
                 html_body += '<ul>';
                 html_body += '<div class="gbko">';
